@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    
+    <data>
+        <variable
+            name="insideCounter"
+            type="com.example.databinding.Counter" />
+        <variable
+            name="outsideCounter"
+            type="com.example.databinding.Counter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_inside" />
+
+            <TextView
+                android:id="@+id/counter_inside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:textSize="@dimen/big_text"
+                tools:text="0"
+                android:text="@={`` + insideCounter.count}"/>
+
+            <Button
+                android:id="@+id/button_inside_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/add_button" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_wide"
+            android:layout_marginBottom="@dimen/margin_wide"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_outside" />
+
+            <TextView
+                android:id="@+id/counter_outside"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:textSize="@dimen/big_text"
+                tools:text="0"
+                android:text="@={`` + outsideCounter.count}"/>
+
+            <Button
+                android:id="@+id/button_outside_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_wide"
+                android:text="@string/add_button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
